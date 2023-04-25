@@ -1,0 +1,42 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "CPCS324GroupProject",
+            "request": "launch",
+            "mainClass": "cpcs.pkg324.group.project.CPCS324GroupProject",
+            "projectName": "CPCS-324 Group Project_9e39de8b"
+        },
+        {
+            "type": "java",
+            "name": "dijkstra",
+            "request": "launch",
+            "mainClass": "cpcs.pkg324.group.project.dijkstra",
+            "projectName": "CPCS-324 Group Project_9e39de8b"
+        },
+        {
+            "type": "java",
+            "name": "kruskal",
+            "request": "launch",
+            "mainClass": "cpcs.pkg324.group.project.kruskal",
+            "projectName": "CPCS-324 Group Project_9e39de8b"
+        },
+        {
+            "type": "java",
+            "name": "prims",
+            "request": "launch",
+            "mainClass": "cpcs.pkg324.group.project.prims",
+            "projectName": "CPCS-324 Group Project_9e39de8b"
+        }
+    ]
+}
