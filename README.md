@@ -1,5 +1,5 @@
 ﻿# CPCS-324-Project
  Class List : 
- Section : CS4
+ Section : CS44
  main class : CPCS324GroupProject
  
