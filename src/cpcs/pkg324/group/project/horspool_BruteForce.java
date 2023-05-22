@@ -5,6 +5,9 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Random;
 
+
+
+
 class horspool_BruteForce {
     public static void run(int lines, int patterns, int length) {
         // Read lines from input file
