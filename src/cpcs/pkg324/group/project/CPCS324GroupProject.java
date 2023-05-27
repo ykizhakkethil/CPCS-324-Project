@@ -1,28 +1,21 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package cpcs.pkg324.group.project;
 
 import java.io.File;
 import java.io.*;
 import java.util.*;
+
 // Test
 /**
  *
  * @author yoonus
- * Abdulakreem Abdullah Al-Ghamdi ($)
+ *         Abdulakreem Abdullah Al-Ghamdi ($)
  */
 public class CPCS324GroupProject {
+    static Scanner main_scanner = new Scanner(System.in);
+    static int choice = 0;
 
-    /**
-     * @param args the command line arguments
-     * @throws java.io.IOException
-     */
     public static void main(String[] args) throws IOException, Exception {
-        Scanner scanner = new Scanner(System.in);
-        int choice;
 
         do {
             System.out.println("Menu:");
@@ -31,19 +24,20 @@ public class CPCS324GroupProject {
             System.out.println("3. Finding minimum spanning tree using Kruskal’s algorithm");
             System.out.println("4. Finding the shortest path using Dijkstra’s algorithm");
             System.out.println("5. Quit");
-            System.out.println("Enter your choice: ");
 
-            choice = scanner.nextInt();
+            System.out.print("Enter your choice: ");
+
+            choice = main_scanner.nextInt();
 
             switch (choice) {
                 case 1:
                     System.out.println("Comparison between Horspool and Brute force algorithms");
                     System.out.println("How many lines you want to read from the text file?");
-                    int lines = scanner.nextInt();
+                    int lines = main_scanner.nextInt();
                     System.out.println("How many patterns to be generated?");
-                    int patterns = scanner.nextInt();
+                    int patterns = main_scanner.nextInt();
                     System.out.println("What is the length of each pattern?");
-                    int length = scanner.nextInt();
+                    int length = main_scanner.nextInt();
                     horspool_BruteForce x = new horspool_BruteForce();
                     x.run(lines, patterns, length); // length is a double
                     break;
@@ -62,20 +56,12 @@ public class CPCS324GroupProject {
                     break;
                 case 5:
                     System.out.println("Quitting program...");
-                    scanner.close();
+                    main_scanner.close();
                     break;
                 default:
                     System.out.println("Invalid choice. Please enter a number between 1 and 5.");
                     break;
             }
         } while (choice != 5);
-
     }
-
-    // --------------------------------------------------------------------------
-    // --------------------------------------------------------------------------
-    // --------------------------------------------------------------------------
-    // --------------------------------------------------------------------------
-    // --------------------------------------------------------------------------
-
 }

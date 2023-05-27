@@ -9,5 +9,6 @@ public class test {
         c=a+b;
         System.out.println("The sum of two numbers is: "+c);
         
+        
     }
 }
