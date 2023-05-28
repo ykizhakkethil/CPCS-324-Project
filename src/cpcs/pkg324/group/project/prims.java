@@ -1,4 +1,8 @@
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package cpcs.pkg324.group.project;
 
 import java.io.File;
@@ -7,20 +11,30 @@ import java.util.Arrays;
 import java.util.PriorityQueue;
 import java.util.Scanner;
 
-public class prims {
+//Omar Badr
 
+public class prims {
+    
     private static int numVertices;
     private static int numEdges;
     private static double[][] adjacencyMatrix;
 
     public static void main(String[] args) {
-        readGraphFromFile();
+
+        readGraphFromFile(); // Read data from file.
+
+        /*Defining variables to facilitate the calculations as per Prim's algorithm.
+        As noticed, variable values are evaluated throughout various methods 
+        which will be further explained below.
+        */
         double[][] mst1 = primUnorderedMinPQ();
         double time1 = measureRunningTime(() -> primUnorderedMinPQ());
         double[][] mst2 = primMinHeap();
         double time2 = measureRunningTime(() -> primMinHeap());
         double weight1 = calculateMSTWeight(mst1);
         double weight2 = calculateMSTWeight(mst2);
+
+        // Print results 
         System.out.println("Total weight of MST by Prim's algorithm (Using unordered Min-Priority queue): " + weight1);
         printMST(mst1);
         System.out.println("Running time of Prim’s algorithm using unordered Min-Priority Queue is " + time1 + " Nano seconds");
@@ -28,7 +42,7 @@ public class prims {
         printMST(mst2);
         System.out.println("Running time of Prim’s algorithm using Min-Heap is " + time2 + " Nano seconds");
     }
-
+    // Method to read data from file, by using the Scanner class.
     private static void readGraphFromFile() {
         try {
             Scanner scanner = new Scanner(new File("input1.txt"));
@@ -50,7 +64,8 @@ public class prims {
             e.printStackTrace();
         }
     }
-
+    
+    // Method to calculate the total weight of MST (Using unordered Min-Priority queue)
     private static double[][] primUnorderedMinPQ() {
         double[][] mst = new double[numVertices][numVertices];
         boolean[] visited = new boolean[numVertices];
@@ -79,7 +94,7 @@ public class prims {
         }
         return mst;
     }
-
+    // Method to calculate total weight of MST (Using Min-Heap): 
     private static double[][] primMinHeap() {
         double[][] mst = new double[numVertices][numVertices];
         boolean[] visited = new boolean[numVertices];
@@ -108,7 +123,7 @@ public class prims {
         }
         return mst;
     }
-
+    // Method to calculate weight of given MST
     private static double calculateMSTWeight(double[][] mst) {
         double weight = 0.0;
         for (int i = 0; i < numVertices; i++) {
@@ -121,6 +136,7 @@ public class prims {
         return weight;
     }
 
+    // Method to print given MST.
     private static void printMST(double[][] mst) {
         System.out.println("The edges in the MST are:");
         for (int i = 0; i < numVertices; i++) {
@@ -132,13 +148,17 @@ public class prims {
         }
     }
 
+    /*  Method which acts as a system timer (i.e: giving us the running time).
+        Note that running time could vary, depending on whether you are calculating
+        the weight using Min-Heap or unordered Min-Priority queue.
+     */
     private static long measureRunningTime(Runnable task) {
         long startTime = System.nanoTime();
         task.run();
         long endTime = System.nanoTime();
         return endTime - startTime;
     }
-
+    // Class to create edges.
     private static class Edge {
 
         int source;

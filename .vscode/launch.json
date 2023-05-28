@@ -6,6 +6,13 @@
   "configurations": [
     {
       "type": "java",
+      "name": "CPCS324GroupProject",
+      "request": "launch",
+      "mainClass": "cpcs.pkg324.group.project.CPCS324GroupProject",
+      "projectName": "CPCS-324-Project_1bbb9940"
+    },
+    {
+      "type": "java",
       "name": "dij",
       "request": "launch",
       "mainClass": "cpcs.pkg324.dij",
