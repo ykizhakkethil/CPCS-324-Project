@@ -32,6 +32,7 @@ class horspool_BruteForce {
             patternArray[i] = text.substring(start, start + length);
         }
 
+        
         // Write patterns to output file
         try {
             Files.write(Paths.get("patterns.txt"), String.join("\n", patternArray).getBytes());
