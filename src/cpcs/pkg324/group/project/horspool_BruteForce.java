@@ -5,9 +5,24 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Random;
 
+// this class is used to implement the brute force algorithm and the Horspool algorithm
+// to find the patterns in the text
+// the class also calculates the average running time of each algorithm
+// steps:
+// 1. read the text from the input file
+// 2. generate random patterns
+// 3. write the patterns to the output file
+// 4. create shift tables for all patterns
+// 5. implement brute force algorithm
+// 6. implement Horspool algorithm
+// 7. display average running times
 
 
+
+<<<<<<< Updated upstream
 // start
+=======
+>>>>>>> Stashed changes
 class horspool_BruteForce {
     public static void run(int lines, int patterns, int length) {
         // Read lines from input file
@@ -18,6 +33,7 @@ class horspool_BruteForce {
         } catch (IOException e) {
             e.printStackTrace();
         }
+<<<<<<< Updated upstream
         // create a string array by splitting text
         String[] textLines = text.split("\n");
         // create a StringBuilder
@@ -32,6 +48,17 @@ class horspool_BruteForce {
         // Generate random patterns
         Random rand = new Random();
         // creat String array 
+=======
+        String[] textLines = text.split("\n"); // Split text into lines
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < lines && i < textLines.length; i++) { // Read only the first lines
+            sb.append(textLines[i]);
+        }
+        text = sb.toString().toLowerCase();// Convert to lower case
+
+        // Generate random patterns
+        Random rand = new Random(); // Create a random object
+>>>>>>> Stashed changes
         String[] patternArray = new String[patterns];
         // for loop to iterate around patternArray
         for (int i = 0; i < patterns; i++) {
@@ -62,7 +89,13 @@ class horspool_BruteForce {
         for (int i = 0; i < patterns; i++) {
             System.out.println("Shift table for pattern " + patternArray[i] + " :");
             for (int j = 0; j < 256; j++) {
+<<<<<<< Updated upstream
                 if (shiftTables[i][j] != length) { // if a certain char in the table has a shift size diffrent than the length print it
+=======
+                if (shiftTables[i][j] != length) {
+
+                    // print the character and its shift value
+>>>>>>> Stashed changes
                     System.out.println((char) j + ": " + shiftTables[i][j]);
                 }
             }
@@ -75,6 +108,8 @@ class horspool_BruteForce {
             long startTime = System.nanoTime();
             int n = text.length();
             int m = pattern.length();
+
+            // A loop to slide pattern one by one
             for (int i = 0; i <= n - m; i++) {
                 int j;
                 for (j = 0; j < m; j++) {
@@ -113,10 +148,10 @@ class horspool_BruteForce {
                     i += shiftTable[text.charAt(i + m - 1)];
                 }
             }
-            long endTime = System.nanoTime();
+            long endTime = System.nanoTime(); //
             horspoolTotalTime += endTime - startTime;
         }
-        double horspoolAvgTime = horspoolTotalTime / (double) patterns;
+        double horspoolAvgTime = horspoolTotalTime / (double) patterns; // Average running time of Horspool algorithm
 
         // Display average running times
         System.out.println("Average running time of brute force algorithm: " + bruteForceAvgTime);

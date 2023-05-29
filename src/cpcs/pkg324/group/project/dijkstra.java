@@ -1,3 +1,4 @@
+
 /*
  * @author: yoonus
  */
@@ -16,9 +17,11 @@ import java.util.*;
  * 6. display the shortest path from the source vertex to all other vertices
  * 7. compare the running time of both
  */
+
 public class dijkstra {
+
     // declare variables
-    static int[][] adjacencyMatrix;
+    static int[][] adjacencyMatrix; 
     static int source;
     static Scanner scanner;
     static Scanner input;
@@ -33,15 +36,15 @@ public class dijkstra {
             int edges = scanner.nextInt();
             adjacencyMatrix = new int[vertices][vertices];
 
-            // fill the matrix with values
+            // fill the matrix with the values
             for (int i = 0; i < edges; i++) {
                 int source = scanner.nextInt();
                 int target = scanner.nextInt();
                 int weight = scanner.nextInt();
-                adjacencyMatrix[source][target] = weight;
+                adjacencyMatrix[source][target] = weight; // fill the matrix with the weight
             }
 
-        } catch (FileNotFoundException e) {
+        } catch (FileNotFoundException e) { // catch the exception if the file is not found
             System.out.println("File not found");
         }
 
@@ -52,8 +55,13 @@ public class dijkstra {
         Scanner scanner = new Scanner(System.in);
         System.out.println();
         System.out.print("Enter Source vertex: ");
-        source = input.nextInt();
-        System.out.println();
+
+        // check if the source vertex is valid
+        source = scanner.nextInt();
+        while (source < 0 || source > adjacencyMatrix.length - 1) {
+            System.out.println("Invalid source vertex, please enter a valid source vertex");
+            source = scanner.nextInt();
+        }
 
         // calculate the time of running the algorithm
         // run the algorithm using unordered array
@@ -179,8 +187,8 @@ public class dijkstra {
 
         // loop until the min heap is empty
         while (!minHeap.isEmpty()) {
-            Pair currentPair = minHeap.poll();
-            int currentVertex = currentPair.vertex;
+            Pair currentPair = minHeap.poll();// remove the vertex with the minimum distance
+            int currentVertex = currentPair.vertex; // get the vertex
 
             if (!visited[currentVertex]) {// check if the vertex is not visited
                 visited[currentVertex] = true;
@@ -209,7 +217,10 @@ public class dijkstra {
         // this method is used to find the vertex with the minimum distance
         int minVertex = -1;
         for (int i = 0; i < distance.length; i++) {
-            if (!visited[i] && (minVertex == -1 || distance[i] < distance[minVertex])) {
+            if (!visited[i] && (minVertex == -1 || distance[i] < distance[minVertex])) { // check if the vertex is not
+                                                                                         // visited and the distance is
+                                                                                         // less than the minimum
+                                                                                         // distance
                 minVertex = i;
             }
         }
@@ -227,7 +238,7 @@ public class dijkstra {
             } else {
                 // print the path and its length from source to vertex i
                 printPath(previous, i);
-                System.out.println(" (Length: " + distance[i] + ")");
+                System.out.println(" (Length: " + (double) (distance[i]) + ")");
             }
         }
     }
