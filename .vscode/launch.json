@@ -6,6 +6,7 @@
   "configurations": [
     {
       "type": "java",
+<<<<<<< Updated upstream
       "name": "CPCS324GroupProject",
       "request": "launch",
       "mainClass": "cpcs.pkg324.group.project.CPCS324GroupProject",
@@ -20,6 +21,8 @@
     },
     {
       "type": "java",
+=======
+>>>>>>> Stashed changes
       "name": "Current File",
       "request": "launch",
       "mainClass": "${file}"

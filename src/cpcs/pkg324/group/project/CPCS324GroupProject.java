@@ -8,7 +8,7 @@ import java.util.*;
 // Test
 /**
  *
- * @author yoonus
+ * @authors yoonus
  *         Abdulakreem Abdullah Al-Ghamdi ($)
  */
 public class CPCS324GroupProject {
