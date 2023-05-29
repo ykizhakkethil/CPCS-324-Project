@@ -23,7 +23,8 @@ public class prims {
 
         readGraphFromFile(); // Read data from file.
 
-        /*Defining variables to facilitate the calculations as per Prim's algorithm.
+        /*
+        Defining variables to facilitate the calculations as per Prim's algorithm.
         As noticed, variable values are evaluated throughout various methods 
         which will be further explained below.
         */
