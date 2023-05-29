@@ -1,5 +1,5 @@
 package cpcs.pkg324.group.project;
-
+// import needed packages
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -7,7 +7,7 @@ import java.util.Random;
 
 
 
-// 
+// start
 class horspool_BruteForce {
     public static void run(int lines, int patterns, int length) {
         // Read lines from input file
@@ -62,7 +62,7 @@ class horspool_BruteForce {
         for (int i = 0; i < patterns; i++) {
             System.out.println("Shift table for pattern " + patternArray[i] + " :");
             for (int j = 0; j < 256; j++) {
-                if (shiftTables[i][j] != length) {
+                if (shiftTables[i][j] != length) { // if a certain char in the table has a shift size diffrent than the length print it
                     System.out.println((char) j + ": " + shiftTables[i][j]);
                 }
             }
