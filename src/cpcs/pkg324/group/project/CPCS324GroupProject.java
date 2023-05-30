@@ -18,7 +18,7 @@ public class CPCS324GroupProject {
 
     public static void main(String[] args) throws IOException, Exception {
 
-        do {
+        do {// do while loop to keep the program running until the user chooses to quit
             System.out.println("=====================================\n=====================================");
             System.out.println("Menu:");
             System.out.println("1. Comparison between Horspool and Brute force algorithms");
@@ -31,7 +31,7 @@ public class CPCS324GroupProject {
 
             choice = main_scanner.nextInt();
 
-            switch (choice) {
+            switch (choice) {// switch case to choose which algorithm to run
                 case 1:
                     System.out.println("Comparison between Horspool and Brute force algorithms");
                     System.out.println("How many lines you want to read from the text file?");
@@ -67,3 +67,5 @@ public class CPCS324GroupProject {
         } while (choice != 5);
     }
 }
+
+
