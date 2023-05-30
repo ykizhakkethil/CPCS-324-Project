@@ -64,7 +64,9 @@ public class kruskal {
                                                           // spanning tree).
 
         long endTime = System.nanoTime(); // To calculate total time
-        double totalTime = (endTime - startTime) / 1e6; // 1e6 = (1 * 10)^6
+
+        // To calculate total time in nano seconds
+        double totalTime = (endTime - startTime);
 
         // Printing the results
         System.out.println("Total weight of MST by Kruskal's algorithm: " + getTotalWeight(weights));
