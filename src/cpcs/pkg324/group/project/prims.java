@@ -47,9 +47,11 @@ public class prims {
     private static void readGraphFromFile() {
         try {
             Scanner scanner = new Scanner(new File("input1.txt"));
-            numVertices = scanner.nextInt();
-            numEdges = scanner.nextInt();
-            adjacencyMatrix = new double[numVertices][numVertices];
+            numVertices = scanner.nextInt(); // Number of vertices
+            numEdges = scanner.nextInt(); // Number of edges
+            adjacencyMatrix = new double[numVertices][numVertices]; //Create the array to store
+
+            //Below, we will insert the matrix's data into the array.
             for (int i = 0; i < numVertices; i++) {
                 Arrays.fill(adjacencyMatrix[i], Double.POSITIVE_INFINITY);
             }
@@ -60,7 +62,7 @@ public class prims {
                 adjacencyMatrix[source][target] = weight;
                 adjacencyMatrix[target][source] = weight;
             }
-            scanner.close();
+            scanner.close(); // Close the scanner object.
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -149,9 +151,10 @@ public class prims {
         }
     }
 
-    /*  Method which acts as a system timer (i.e: giving us the running time).
-        Note that running time could vary, depending on whether you are calculating
-        the weight using Min-Heap or unordered Min-Priority queue.
+    /*  
+    Method which acts as a system timer (i.e: giving us the running time).
+    Note that running time could vary, depending on whether you are calculating
+    the weight using Min-Heap or unordered Min-Priority queue.
      */
     private static long measureRunningTime(Runnable task) {
         long startTime = System.nanoTime();
