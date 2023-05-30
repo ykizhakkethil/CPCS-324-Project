@@ -10,12 +10,8 @@ import java.io.File;
 import java.io.*;
 import java.util.*;
 
-// Test
-/**
- *
- * @authors yoonus
- *         Abdulakreem Abdullah Al-Ghamdi ($)
- */
+
+
 public class CPCS324GroupProject {
     static Scanner main_scanner = new Scanner(System.in);
     static int choice = 0;
