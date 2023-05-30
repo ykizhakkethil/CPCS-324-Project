@@ -23,6 +23,7 @@ public class CPCS324GroupProject {
     public static void main(String[] args) throws IOException, Exception {
 
         do {
+            System.out.println("=====================================\n=====================================");
             System.out.println("Menu:");
             System.out.println("1. Comparison between Horspool and Brute force algorithms");
             System.out.println("2. Finding minimum spanning tree using Prim’s algorithm");
