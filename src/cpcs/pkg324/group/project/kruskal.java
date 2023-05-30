@@ -9,6 +9,8 @@ package cpcs.pkg324.group.project;
 import java.util.*;
 import java.io.*;
 
+
+
 public class kruskal {
 
     /**
@@ -106,7 +108,7 @@ public class kruskal {
             if (!findSet(sourceVertex, targetVertex, id)) {
                 union(sourceVertex, targetVertex, id);
                 mst.add(e);
-                weights.push(weight);
+                weights.push(weight); // Pushing the weight of the edge to the stack.
             }
         }
         return mst;
