@@ -8,7 +8,6 @@
  * @author: yoonus
  */
 package cpcs.pkg324.group.project;
-
 import java.io.*;
 import java.util.*;
 
@@ -39,7 +38,7 @@ public class dijkstra {
             scanner = new Scanner(new File("input2.txt"));
             int vertices = scanner.nextInt();
             int edges = scanner.nextInt();
-            adjacencyMatrix = new int[vertices][vertices];
+            adjacencyMatrix = new int[vertices][vertices];// create a matrix with the size of vertices
 
             // fill the matrix with the values
             for (int i = 0; i < edges; i++) {
@@ -61,7 +60,7 @@ public class dijkstra {
         System.out.println();
         System.out.print("Enter Source vertex: ");
 
-        // check if the source vertex is valid
+        // check if the source vertex is valid, otherwise prompt the user to enter a valid source vertex
         source = scanner.nextInt();
         while (source < 0 || source > adjacencyMatrix.length - 1) {
             System.out.println("Invalid source vertex, please enter a valid source vertex");
@@ -88,11 +87,11 @@ public class dijkstra {
         } else {
             System.out.println("Running time of Dijkstra using min Heap is better");
         }
-        // close the scanner
+        // close the scanner if needed
     }
 
     public static void displayWeightMatrix(int[][] adjacencyMatrix) {
-        // this method is used to display the weight matrix in a good format
+        // this method is used to display the weight matrix in form of a table
         int vertices = adjacencyMatrix.length;
         int edges = 0;
         System.out.print("Weight Matrix:\n  ");
@@ -118,7 +117,7 @@ public class dijkstra {
         for (int i = 0; i < vertices; i++) {
             System.out.print(i + ": ");
             for (int j = 0; j < vertices; j++) {
-                if (adjacencyMatrix[i][j] != 0) {
+                if (adjacencyMatrix[i][j] != 0) {// check if there is an edge between the vertices
                     System.out.print(i + "-" + j + " " + adjacencyMatrix[i][j] + " ");
                 }
             }
@@ -182,7 +181,7 @@ public class dijkstra {
         // create a min heap using priority queue to store the vertices
         PriorityQueue<Pair> minHeap = new PriorityQueue<>(vertices, new Comparator<Pair>() {
             @Override
-            public int compare(Pair o1, Pair o2) {
+            public int compare(Pair o1, Pair o2) {// construct a comparator to compare the distances
                 return o1.distance - o2.distance;// return the difference between the distances
             }
         });
@@ -236,6 +235,8 @@ public class dijkstra {
         // this method is used to display the shortest paths
         int vertices = adjacencyMatrix.length;
         System.out.println("Shortest paths from vertex " + source + " are:");
+
+        // loop through the vertices
         for (int i = 0; i < vertices; i++) {
             System.out.print("A path from " + source + " to " + i + ": ");
             if (distance[i] == Integer.MAX_VALUE) {
@@ -257,7 +258,7 @@ public class dijkstra {
     }
 
     static class Pair {
-        // this class is used to store the vertex and its distance of type int
+        // this class is used to store the vertex and its distance of type int as a pair
 
         // inicializ atributes
         int vertex;
