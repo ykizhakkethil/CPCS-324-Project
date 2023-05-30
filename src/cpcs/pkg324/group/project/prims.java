@@ -155,7 +155,7 @@ public class prims {
     Method which acts as a system timer (i.e: giving us the running time).
     Note that running time could vary, depending on whether you are calculating
     the weight using Min-Heap or unordered Min-Priority queue.
-     */
+    */
     private static long measureRunningTime(Runnable task) {
         long startTime = System.nanoTime();
         task.run();
